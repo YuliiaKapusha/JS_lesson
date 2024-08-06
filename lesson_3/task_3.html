@@ -14,16 +14,37 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
         let value = prompt("Введіть рік перевірки");
         value = Number(value);
-        if 
+    
+        function isLeapYear(year) {
+            if (year % 4 === 0) { // перевіряємо, чи ділиться рік на 4 без залишку
+                if (year % 100 === 0) { // перевіряємо, чи ділиться рік на 100 без залишку
+                    if (year % 400 === 0) { // перевіряємо, чи ділиться рік на 400 без залишку
+                        return true; // рік високосний
+                    } else {
+                        return false; // рік не високосний
+                    }
+                } else {
+                    return true; // рік високосний
+                }
+            } else {
+                return false; // рік не високосний
+            }
+        }
+        if (isLeapYear(value)) {
+            alert(value + ' рік є високосним.');
+        } else {
+            alert(value + ' рік не є високосним.');
+        }
     </script>
-</body>
+    
+  </body>
 </html>
